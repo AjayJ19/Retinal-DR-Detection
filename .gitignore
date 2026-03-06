@@ -3,10 +3,6 @@
 venv/
 env/
 
-# Model weights (too large for GitHub)
-*.pth
-*.pt
-
 # Python
 __pycache__/
 *.pyc
