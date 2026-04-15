@@ -1,0 +1,107 @@
+.conf-chart {
+  padding: 28px;
+}
+
+.conf-chart__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.conf-chart__title svg {
+  color: var(--accent-blue);
+}
+
+.conf-chart__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.conf-bar {
+  display: grid;
+  grid-template-columns: 180px 1fr 60px;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 0;
+  transition: all var(--transition-base);
+}
+
+.conf-bar--active {
+  transform: scale(1.01);
+}
+
+.conf-bar__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.conf-bar__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.conf-bar__name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.conf-bar__grade {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.conf-bar__track {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.conf-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--bar-color), color-mix(in srgb, var(--bar-color), white 15%));
+  border-radius: 100px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--bar-color), transparent 60%);
+}
+
+.conf-bar--active .conf-bar__fill {
+  box-shadow: 0 0 16px color-mix(in srgb, var(--bar-color), transparent 40%);
+}
+
+.conf-bar__value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 768px) {
+  .conf-bar {
+    grid-template-columns: 120px 1fr 50px;
+    gap: 10px;
+  }
+
+  .conf-bar__name {
+    font-size: 0.75rem;
+  }
+
+  .conf-bar__grade {
+    display: none;
+  }
+
+  .conf-chart {
+    padding: 20px;
+  }
+}

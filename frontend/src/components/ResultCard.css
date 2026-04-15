@@ -1,0 +1,122 @@
+.result-card {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border-left: 4px solid var(--grade-color);
+}
+
+.result-card__glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at top left, var(--grade-glow), transparent 60%);
+  pointer-events: none;
+}
+
+.result-card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.result-card__grade-badge {
+  padding: 6px 16px;
+  background: var(--grade-color);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.result-card__title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  flex: 1;
+}
+
+.result-card__urgency {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-accent);
+}
+
+.result-card__body {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.result-card__description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Confidence bar */
+.result-card__confidence {
+  position: relative;
+}
+
+.result-card__confidence-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-card__confidence-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.result-card__confidence-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--grade-color);
+}
+
+.result-card__confidence-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.result-card__confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--grade-color), color-mix(in srgb, var(--grade-color), white 20%));
+  border-radius: 100px;
+  animation: bar-fill 1s ease-out forwards;
+  box-shadow: 0 0 12px var(--grade-glow);
+}
+
+@media (max-width: 768px) {
+  .result-card {
+    padding: 24px;
+  }
+
+  .result-card__title {
+    font-size: 1.3rem;
+  }
+
+  .result-card__header {
+    gap: 10px;
+  }
+}

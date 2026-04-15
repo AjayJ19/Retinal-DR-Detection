@@ -1,0 +1,151 @@
+/* ============================================================
+   APP — layout & state-specific styles
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Loading State ────────────────────────────────────────── */
+.loading-section {
+  padding: 40px 0;
+}
+
+.loading-card {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.loading-card__eye {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.08);
+  color: var(--accent-blue);
+  animation: pulse-glow 2s infinite;
+}
+
+.loading-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.loading-card__text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.loading-card__bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.loading-card__bar-fill {
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple), var(--accent-blue));
+  background-size: 200% 100%;
+  border-radius: 100px;
+  animation: shimmer 1.5s linear infinite;
+}
+
+/* ── Error State ──────────────────────────────────────────── */
+.error-section {
+  padding: 40px 0;
+}
+
+.error-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 28px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.error-card__content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e74c3c;
+  margin-bottom: 4px;
+}
+
+.error-card__content p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Results Section ──────────────────────────────────────── */
+.results-section {
+  padding: 20px 24px 60px;
+}
+
+.results-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.results-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+}
+
+.results-divider__text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.results-grid__left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.results-grid__right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .results-section {
+    padding: 20px 16px 40px;
+  }
+}
